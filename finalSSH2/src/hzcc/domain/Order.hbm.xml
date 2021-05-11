@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-26 15:27:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hzcc.domain.Order" table="OrderInfo">
+        <id name="orderID" type="java.lang.Long">
+            <column name="orderID" />
+            <generator class="identity" />
+        </id>
+        <property name="mebID" type="java.lang.String">
+            <column name="mebID" />
+        </property>
+        <property name="projID" type="java.lang.String">
+            <column name="projID" />
+        </property>
+        <property name="num" type="java.lang.Integer">
+            <column name="num" />
+        </property>
+        <property name="appotime" type="java.lang.String">
+            <column name="appotime" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" />
+        </property>
+    </class>
+</hibernate-mapping>

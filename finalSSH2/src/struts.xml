@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!--将Struts 2默认的objectFactory设置为spring-->
+	<constant name="struts.objectFactory" value="spring" /> 
+	  
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.action.extension" value="action"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="crm" extends="struts-default,json-default" namespace="/">
+     	<global-allowed-methods>regex:.*</global-allowed-methods>
+
+		<action name="account_*" class="accountAction" method="{1}">
+			<result name="success">/home.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="pwdUI">/jsp/changepwd.jsp</result>
+			<result name="myerror">/jsp/myerror.jsp</result>
+			<result name="finish">/jsp/success.jsp</result>
+
+			<result name="registerUI">/register.jsp</result>
+
+			<result name="findAll">/jsp/member/memberlist.jsp</result>
+			<result name="editUI">/jsp/member/memberedit.jsp</result>
+			<result name="list" type="redirectAction">account_findAllMember</result>
+		</action>
+
+		<action name="project_*" class="projectAction" method="{1}">
+			<result name="saveUI">/jsp/project/projectadd.jsp</result>
+			<result name="editUI">/jsp/project/projectedit.jsp</result>
+			<result name="findAll">/jsp/project/projectlist.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="list" type="redirectAction">project_findAllProject</result>
+		</action>
+
+		<action name="department_*" class="departmentAction" method="{1}">
+			<result name="saveUI">/jsp/department/departmentadd.jsp</result>
+			<result name="editUI">/jsp/department/departmentedit.jsp</result>
+			<result name="findAll">/jsp/department/departmentlist.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="list" type="redirectAction">department_findAllDepartment</result>
+		</action>
+
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="saveUI">/jsp/order/orderadd.jsp</result>
+			<result name="editUI">/jsp/order/orderedit.jsp</result>
+			<result name="findMine">/jsp/order/myorder.jsp</result>
+			<result name="findAll">/jsp/order/orderlist.jsp</result>
+			<result name="payUI">/jsp/order/payUI.jsp</result>
+			<result name="success">/jsp/success.jsp</result>
+			<result name="list" type="redirectAction">order_findAllOrder</result>
+			<result name="mylist" type="redirectAction">order_findMyOrder</result>
+
+			<result name="savemyorder" type="json">
+				<param name="root">message</param>
+			</result>
+		</action>
+		
+    </package>
+</struts>

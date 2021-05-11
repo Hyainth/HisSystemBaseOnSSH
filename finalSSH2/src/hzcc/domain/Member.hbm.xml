@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-26 15:27:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hzcc.domain.Member" table="Member">
+        <id name="mebID" type="java.lang.String">
+            <column name="mebID" />
+            <generator class="assigned" />
+        </id>
+        <property name="mebName" type="java.lang.String">
+            <column name="mebName" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="resdate" type="java.lang.String">
+            <column name="resdate" />
+        </property>
+    </class>
+</hibernate-mapping>

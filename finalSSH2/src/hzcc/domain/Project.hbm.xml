@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-20 22:33:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hzcc.domain.Project" table="Project">
+        <id name="projID" type="java.lang.String">
+            <column name="projID" />
+            <generator class="assigned" />
+        </id>
+        <property name="projName" type="java.lang.String">
+            <column name="projName" />
+        </property>
+        <property name="depID" type="java.lang.String">
+            <column name="depID" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="unit" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price" />
+        </property>
+        <property name="notes" type="java.lang.String">
+            <column name="notes" />
+        </property>
+    </class>
+</hibernate-mapping>
